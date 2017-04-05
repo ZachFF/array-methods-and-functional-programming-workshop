@@ -17,7 +17,7 @@ function forEach(callback, theArray) {
 function map(mappingFunction, theArray) {
   var array =[];
   for(var i =0; i <theArray.length; i++){
-    array.push(theArray[i]*2)
+    array.push(mappingFunction(theArray[i]))
   }
 return array;
 }
@@ -69,11 +69,19 @@ function indexOf(item, theArray) {
 }
 
 function findIndex(predicate, theArray) {
+  
+  for(var i =0; i <theArray.length; i++){
+    if(predicate(theArray[i])){
+      return i
+    }
+    
+  }
+  return -1
 
 }
 
 function first(n, theArray) {
-
+     
 }
 
 function last(n, theArray) {
