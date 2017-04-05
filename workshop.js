@@ -148,19 +148,32 @@ function flatten(theArray) {
   }
 
 function negate1(predicate) {
-
+  return function(x){
+    return !predicate(x)
+  }
 }
 
 function negate2(predicate) {
+  return function(a,b){
+    return !predicate(a,b)
+  }
 
 }
 
 function compose1(fun1, fun2) {
-
+ return function(x) {
+    return fun1(fun2(x))
+  }
 }
 
 function compose2(arrOfFuncs) {
-
+ return function(arg) {
+    var temp = arg;
+    for (var i = arrOfFuncs.length-1, l = 0; i >= l; i--) {
+      temp = arrOfFuncs[i](temp);
+    }
+    return temp;
+  }
 }
 
 /***** DO NOT EDIT AFTER THIS LINE *****/
