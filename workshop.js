@@ -127,12 +127,10 @@ function last(n, theArray) {
 }
 
 function pluck(property, arrayOfObjects) {
-  var emptyArray =[];
+  var emptyArray = [];
   for(var i =0; i <arrayOfObjects.length; i++){
-    if(arrayOfObjects[i] ==="property"){
-      emptyArray.push(arrayOfObjects[i])
-    }
-  }
+    emptyArray.push(arrayOfObjects[i][property])
+ }
   return emptyArray;
 }
 
