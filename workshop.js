@@ -135,8 +135,17 @@ function pluck(property, arrayOfObjects) {
 }
 
 function flatten(theArray) {
-
-}
+  var tempArray = [];
+  for (var i = 0; i < theArray.length; i++) {
+    if (Array.isArray(theArray[i])) {
+      tempArray = tempArray.concat(flatten(theArray[i]));
+    }
+    else {
+      tempArray.push(theArray[i]);
+    }
+  }
+  return tempArray;
+  }
 
 function negate1(predicate) {
 
