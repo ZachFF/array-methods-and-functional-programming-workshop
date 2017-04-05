@@ -101,11 +101,39 @@ function first(n, theArray) {
 }
 
 function last(n, theArray) {
+  var emptyArray = [];
+  if (Array.isArray(n)) {
+    return n[n.length-1]
+  }
+   if (n < 0) {
+    return emptyArray;
+  }
+  if (n > theArray.length) {
+    return theArray;
+  }
+  if(n ===1){
+    
+    return [theArray[theArray.length-1]];
+  }
+  else {
+    for (var i = theArray.length-1; i >=n; i--) {
+      emptyArray.unshift(theArray[i]);
+    }
+    return emptyArray;
+  }
+  
+  
 
 }
 
 function pluck(property, arrayOfObjects) {
-
+  var emptyArray =[];
+  for(var i =0; i <arrayOfObjects.length; i++){
+    if(arrayOfObjects[i] ==="property"){
+      emptyArray.push(arrayOfObjects[i])
+    }
+  }
+  return emptyArray;
 }
 
 function flatten(theArray) {
