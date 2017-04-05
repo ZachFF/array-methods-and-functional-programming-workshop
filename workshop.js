@@ -23,19 +23,49 @@ return array;
 }
 
 function filter(predicate, theArray) {
+  var filteredArray = [];
+  for (var i = 0; i < theArray.length; i++) {
+    if (predicate(theArray[i])) {
+      filteredArray.push(theArray[i])
+    }
+
+  }
+      return filteredArray;
 
 }
 
 function every(predicate, theArray) {
+  var test=true;
+  for(var i =0; i <theArray.length; i++){
+    if(predicate(theArray[i])===false){
+      test = false
+      return false;
+    }
+  
+  }
+  if(test){
+    return true;
+  }
 
 }
 
 function some(predicate, theArray) {
+  for (var i = 0; i < theArray.length; i++) {
+    if (predicate(theArray[i])) {
+      return true
+    }
 
+  }
+  return false
 }
-
 function indexOf(item, theArray) {
+  for (var i=0; i < theArray.length; i++) {
+    if (item === theArray[i]) {
+       return i;
+    }
 
+  }
+  return -1;
 }
 
 function findIndex(predicate, theArray) {
