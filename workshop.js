@@ -8,14 +8,18 @@ function forEach(callback, theArray) {
     ...
   }
   */
-  for(var i=0; i< theArray.length; i++){
-    callback(theArray[i]);
+  for(var i=0; i <theArray.length; i++){
+    callback(theArray[i])
   }
   
 }
 
 function map(mappingFunction, theArray) {
-
+  var array =[];
+  for(var i =0; i <theArray.length; i++){
+    array.push(theArray[i]*2)
+  }
+return array;
 }
 
 function filter(predicate, theArray) {
